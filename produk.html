@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title> Euphoscènt</title>
+  <title>Product</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -82,6 +82,21 @@
       transform: translateY(-50%);
     }
 
+    .toast-custom {
+      animation: slideInRight 0.5s ease forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+
     .social-icon {
       transition: transform 0.3s;
     }
@@ -96,7 +111,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light position-sticky top-0 p-3" style="z-index: 1; backdrop-filter: blur(50px); background-color: rgba(245, 244, 240, 0.1);">
       <div class="container-md">
-          <a class="navbar-brand fw-bold fs-2" href="#">Euphoscènt</a>
+          <a class="navbar-brand fw-bold fs-2" href="construction.html">Euphoscènt</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -105,15 +120,15 @@
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="tentang.html">About</a></li>
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link active fw-bold" href="produk.html">Product</a></li>
-              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="construction.html">Shop</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="pemesanan.html">Shop</a></li>
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="construction.html">Contact</a></li>
           </ul>
           </div>
       </div>
   </nav>
 
-  <main class="container-sm mb-5 pb-5">
-    <section class="container-sm mb-5 pb-5">
+  <main class="container-sm pb-5">
+    <section class="container-sm">
       
       <h1 class="mb-5 fw-bold pt-5 text-center">Daftar Parfum</h1>
   
@@ -149,17 +164,17 @@
           </div>
           
           <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 120.000</p>
+            <p class="fw-bold mb-2 fs-4">Rp 189.000</p>
             <div class="d-grid gap-2 justify-content-md-end my-4">
 
               <!-- Tombol Cart -->
-              <button class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Add to Cart</span>
               </button>
 
               <!-- Tombol Wishlist -->
-              <button class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
                 <i class="fas fa-heart"></i>
                 <span>Wishlist</span>
               </button>
@@ -187,17 +202,17 @@
           </div>
           
           <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 130.000</p>
+            <p class="fw-bold mb-2 fs-4">Rp 329.000</p>
             <div class="d-grid gap-2 justify-content-md-end my-4">
 
               <!-- Tombol Cart -->
-              <button class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Add to Cart</span>
               </button>
 
               <!-- Tombol Wishlist -->
-              <button class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
                 <i class="fas fa-heart"></i>
                 <span>Wishlist</span>
               </button>
@@ -225,17 +240,17 @@
           </div>
           
           <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 125.000</p>
+            <p class="fw-bold mb-2 fs-4">Rp 159.000</p>
             <div class="d-grid gap-2 justify-content-md-end my-4">
               
               <!-- Tombol Cart -->
-              <button class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Add to Cart</span>
               </button>
 
               <!-- Tombol Wishlist -->
-              <button class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
                 <i class="fas fa-heart"></i>
                 <span>Wishlist</span>
               </button>
@@ -263,17 +278,17 @@
           </div>
           
           <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 140.000</p>
+            <p class="fw-bold mb-2 fs-4">Rp 279.000</p>
             <div class="d-grid gap-2 justify-content-md-end my-4">
               
               <!-- Tombol Cart -->
-              <button class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Add to Cart</span>
               </button>
 
               <!-- Tombol Wishlist -->
-              <button class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
                 <i class="fas fa-heart"></i>
                 <span>Wishlist</span>
               </button>
@@ -301,17 +316,17 @@
           </div>
           
           <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 120.000</p>
+            <p class="fw-bold mb-2 fs-4">Rp 249.000</p>
             <div class="d-grid gap-2 justify-content-md-end my-4">
               
               <!-- Tombol Cart -->
-              <button class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="showToast('Barang berhasil ditambahkan ke keranjang!', 'check')" class="btn btn-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Add to Cart</span>
               </button>
 
               <!-- Tombol Wishlist -->
-              <button class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2">
+              <button onclick="toggleWishlist(this)" class="btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2 rounded-pill px-3 py-2" data-wishlisted="false">
                 <i class="fas fa-heart"></i>
                 <span>Wishlist</span>
               </button>
@@ -319,6 +334,12 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="text-center my-5">
+        <a href="pemesanan.html" class="btn btn-dark btn-lg px-5 py-3 rounded-pill shadow">
+          <i class="fa-solid fa-bag-shopping me-3"></i>Shop Now
+        </a>
       </div>
     </section>
   </main>
@@ -337,7 +358,7 @@
                           <i class="fas fa-gem me-3"></i>Euphoscènt
                       </h6>
                       <p>
-                          Menjadi pilihan utama parfum berkualitas di Indonesia yang mencerminkan kepribadian setiap pengguna.
+                          To be the first choice of quality perfume in Indonesia that reflects the personality of each user.
                       </p>
                       <div class="col-fluid mt-5">
                       <a href="https://www.facebook.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
@@ -378,6 +399,10 @@
       </div>
   </footer>
 
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+    <div id="toast-container" class="toast-stack d-flex flex-column align-items-end gap-2"></div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -388,6 +413,59 @@
       item.style.display = text.includes(filter) ? '' : 'none';
     });
   });
+
+  function showToast(message, iconType = "check") {
+    const toastId = "toast" + Date.now();
+
+    let iconHTML = "";
+    if (iconType === "check") {
+      iconHTML = `<span class="me-2 text-success fs-5">✔️</span>`;
+    } else if (iconType === "love") {
+      iconHTML = `<span class="me-2 text-danger fs-5">❤️</span>`;
+    } else if (iconType === "info") {
+    iconHTML = `<span class="me-2 text-primary fs-5">ℹ️</span>`; // Tambahkan ini!
+  }
+
+    const toastHTML = `
+  <div id="${toastId}" class="toast toast-custom border border-1 rounded shadow show" role="alert" aria-live="assertive" aria-atomic="true" style="background-color: white;">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <div class="d-flex align-items-center">
+        ${iconHTML}
+        <div class="toast-body mb-0">${message}</div>
+      </div>
+      <button type="button" class="btn-close ms-3" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+`;
+
+    const container = document.getElementById("toast-container");
+    container.insertAdjacentHTML("beforeend", toastHTML);
+
+    const toastElement = document.getElementById(toastId);
+    const toast = new bootstrap.Toast(toastElement, { delay: 3000 });
+    toast.show();
+
+    toastElement.addEventListener('hidden.bs.toast', () => {
+      toastElement.remove();
+    });
+  }
+
+  function toggleWishlist(button) {
+    const isWishlisted = button.getAttribute("data-wishlisted") === "true";
+    const icon = button.querySelector("i");
+
+    if (isWishlisted) {
+      // Hapus wishlist
+      button.setAttribute("data-wishlisted", "false");
+      icon.classList.remove("text-danger");
+      showToast("Barang dihapus dari wishlist!", "info");
+    } else {
+      // Tambahkan ke wishlist
+      button.setAttribute("data-wishlisted", "true");
+      icon.classList.add("text-danger");
+      showToast("Barang ditambahkan ke wishlist!", "love");
+    }
+  }
 </script>
 
 

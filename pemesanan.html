@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <style>
+    .nav-hover {
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-hover:hover {
+      background-color: rgba(163, 161, 153, 0.15);
+    }
+
+    .shopee-header {
+      background-color: BLUE;
+      padding: 1rem;
+      color: rgb(255, 255, 255);
+    }
+
+    .btn-next,
+    .btn-checkout {
+      background-color: blue;
+      color: rgb(255, 255, 255);
+    }
+
+    .btn-next:hover,
+    .btn-checkout:hover {
+      background-color: BLUE;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .btn-back {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-back:hover {
+      background-color: #c82333;
+    }
+    .Galery {
+      display: flex;
+      justify-content: center; 
+      align-items: center;      
+      margin: 20px 0;           
+    }
+
+    .product-card.muted {
+      opacity: 0.5;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .product-card.muted:hover {
+      opacity: 1;
+    }
+
+    .social-icon {
+    transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+    transform: scale(1.3);
+    }
+  </style>
+</head>
+
+<body style="background-color: #f5f5f5;">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light position-sticky top-0 p-3" style="z-index: 1; backdrop-filter: blur(50px); background-color: rgba(245, 244, 240, 0.1);">
+      <div class="container-md">
+          <a class="navbar-brand fw-bold fs-2" href="construction.html">Euphoscènt</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="tentang.html">About</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="produk.html">Product</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link active fw-bold" href="pemesanan.html">Shop</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="construction.html">Contact</a></li>
+          </ul>
+          </div>
+      </div>
+  </nav>
+
+  <div class="section active" id="step1">
+    <h1 class="mb-5 fw-bold pt-5 text-center">Order Product</h1>
+    <div class="container-sm card mb-3 rounded-4 shadow-sm">
+  
+      <!-- Product 1 -->
+      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+        <div class="row align-items-center" id="product-row">
+          <!-- Gambar Produk -->
+          <div class="col-auto">
+            <img src="img/Product1.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+          </div>
+  
+          <!-- Info Produk -->
+          <div class="col">
+            <h3 class="mb-2 fw-semibold fs-4">Jouisse</h3>
+            <p class="fs-5 mb-2 text-muted">Fruity | 50ml</p>  
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 189.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Kuantitas -->
+              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto;">
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 2 -->
+      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+        <div class="row align-items-center" id="product-row">
+          <!-- Gambar Produk -->
+          <div class="col-auto">
+            <img src="img/Product2.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+          </div>
+  
+          <!-- Info Produk -->
+          <div class="col">
+            <h3 class="mb-2 fw-semibold fs-4">Savoreux</h3>
+            <p class="fs-5 mb-2 text-muted">Woody Gourmand | 100ml</p>  
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 329.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Kuantitas -->
+              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 3 -->
+      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+        <div class="row align-items-center" id="product-row">
+          <!-- Gambar Produk -->
+          <div class="col-auto">
+            <img src="img/Product3.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+          </div>
+  
+          <!-- Info Produk -->
+          <div class="col">
+            <h3 class="mb-2 fw-semibold fs-4">Eau Vide</h3>
+            <p class="fs-5 mb-2 text-muted">Clean Musk | 50ml</p>  
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 159.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Kuantitas -->
+              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 4 -->
+      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+        <div class="row align-items-center" id="product-row">
+          <!-- Gambar Produk -->
+          <div class="col-auto">
+            <img src="img/Product4.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+          </div>
+  
+          <!-- Info Produk -->
+          <div class="col">
+            <h3 class="mb-2 fw-semibold fs-4">Azurin</h3>
+            <p class="fs-5 mb-2 text-muted">Aquatic | 100ml</p>  
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 279.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Kuantitas -->
+              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 5 -->
+      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+        <div class="row align-items-center" id="product-row">
+          <!-- Gambar Produk -->
+          <div class="col-auto">
+            <img src="img/Product5.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+          </div>
+  
+          <!-- Info Produk -->
+          <div class="col">
+            <h3 class="mb-2 fw-semibold fs-4">Lilane</h3>
+            <p class="fs-5 mb-2 text-muted">Floral | 75ml</p>  
+          </div>
+          
+          <div class="col-md-3 text-md-end text-start">
+            <p class="fw-bold mb-2 fs-4">Rp 249.000</p>
+            <div class="d-grid gap-2 justify-content-md-end my-4">
+              
+              <!-- Tombol Kuantitas -->
+              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container-md text-end my-5">
+      <button id="btn-checkout" class="btn btn-dark btn-lg px-4 py-2 rounded-pill shadow" onclick="goToStep2()" disabled>
+        Checkout
+      </button>
+    </div>
+  </div>
+
+  <div class="section" id="step2">
+    <div class="container py-5">
+      <div class="card p-4 rounded-4">
+        <div class="mb-4 pb-3 border-bottom">
+          <h5 class="step-title">Personal Information</h5>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="fullname" class="form-label">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-user "></i></span>
+              <input type="text" aria-label="First name" class="form-control" placeholder="First Name" id="first-name" required/>
+              <input type="text" aria-label="Last name" class="form-control" placeholder="Last Name" id="last-name" required/>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" id="phone" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" id="email" required>
+            </div>
+          </div>
+          <div class="mb-3">
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" id="address" required></textarea>
+          </div>
+          <div class="text-end mt-4">
+            <button type="button" class="btn btn-secondary px-4 rounded-5" onclick="goToStep1()">Back</button>
+            <button type="submit" class="btn btn-primary px-4 rounded-5" onclick="goToStep3()">Select Payment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <!--Checkout -->
+    <div class="section" id="step3">
+      <div class="row g-4">
+        <!-- Alamat dan Produk -->
+        <div class="col-md-8">
+          <div class="card p-3 shadow-sm mb-3">
+            <h5>Alamat Pengiriman</h5>
+            <p class="fw-semibold" id="checkout-name"></p>
+            <p id="checkout-address"></p>
+            <p class="text-muted" id="checkout-phone"></p>
+          </div>
+          <div class="card p-3 shadow-sm">
+            <h5 class="mb-3">Produk Dipesan</h5>
+            <div id="checkout-products"></div>
+          </div>
+        </div>
+
+        <!--Pembayaran -->
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <h5>Ringkasan Pembayaran</h5>
+            <div class="d-flex justify-content-between mb-2">
+              <span>Subtotal</span>
+              <span id="subtotal-text">Rp 0</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div>Diskon</div>
+              <div id="discount-text">Rp</div>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span>Ongkir</span>
+              <span>Rp 0</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold">
+              <span>Total</span>
+              <span id="total-text">Rp 0</span>
+            </div>
+            <button type="button" class="btn btn-back w-100 mb-2" onclick="goToStep2Back()">Kembali</button>
+            <button class="btn btn-checkout w-100 mt-4">Buat Pesanan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white" style="background: linear-gradient(rgba(0, 0, 0, 1), rgba(54, 47, 28, 1)); cursor: default;">
+  <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="p-3">
+          <div class="container text-center text-md-start mt-5">
+              <div class="row mt-3">
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <h6 class="text-uppercase fw-bold mb-4">
+                          <i class="fas fa-gem me-3"></i>Euphoscènt
+                      </h6>
+                      <p>
+                          To be the first choice of quality perfume in Indonesia that reflects the personality of each user.
+                      </p>
+                      <div class="col-fluid mt-5">
+                      <a href="https://www.facebook.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-facebook-f social-icon"></i>
+                      </a>
+                      <a href="https://twitter.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-twitter social-icon"></i>
+                      </a>
+                      <a href="https://www.instagram.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-instagram social-icon"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-linkedin social-icon"></i>
+                      </a>
+                      <a href="https://github.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+                          <i class="fab fa-github social-icon"></i>
+                      </a>
+                  </div>
+                  </div>
+  
+                  
+                  <!-- Right -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                      <p><i class="fas fa-home me-3"></i>Condongcatur, Kabupaten Sleman, Daerah Istimewa Yogyakarta</p>
+                      <p>
+                          <i class="fas fa-envelope me-3"></i>
+                          euphoscènt@gmail.com
+                      </p>
+                      <p><i class="fas fa-phone me-3"></i>+62 274884 201</p>   
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <div class="text-center p-4" style="background-color: #000000;">
+          <span class="fw-medium">&#169; 2025 Euphoscènt</span>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Order Quantity +/-
+    function increaseQty(btn) {
+      const card = btn.closest('.product-card');
+      const input = card.querySelector('.quantity');
+      input.value = parseInt(input.value) + 1;
+      updateCardState(card);
+    }
+
+    function decreaseQty(btn) {
+      const card = btn.closest('.product-card');
+      const input = card.querySelector('.quantity');
+      const newVal = parseInt(input.value) - 1;
+      input.value = newVal >= 0 ? newVal : 0;
+      updateCardState(card);
+    }
+
+    function updateCardState(card) {
+      const qty = parseInt(card.querySelector('.quantity').value);
+      if (qty === 0) {
+        card.classList.add('muted');
+      } else {
+        card.classList.remove('muted');
+      }
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => updateCardState(card));
+
+    // Ganti Halaman
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const selectedProducts = [];
+
+    document.querySelectorAll('.btn-outline-secondary').forEach(btn => {
+      btn.addEventListener('click', updateCheckoutButtonState);
+    });
+
+    function goToStep2() {
+      selectedProducts.length = 0;
+      const cards = document.querySelectorAll('.product-card');
+
+      cards.forEach(card => {
+        const name = card.querySelector('h3').textContent.trim();
+        const qty = parseInt(card.querySelector('.quantity').value);
+        const priceText = card.querySelector('.fw-bold').textContent.trim().replace(/[^\d]/g, '');
+        const price = parseInt(priceText);
+
+        if (qty > 0) {
+          selectedProducts.push({ name, qty, price });
+        }
+      });
+
+      if (selectedProducts.length === 0) {
+        alert("Pilih minimal 1 produk untuk melanjutkan.");
+        return;
+      }
+
+      step1.classList.remove('active');
+      step2.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCheckoutButtonState();
+    });
+
+    function updateCheckoutButtonState() {
+      const quantities = document.querySelectorAll('.quantity');
+      const checkoutButton = document.getElementById('btn-checkout');
+      const hasSelected = Array.from(quantities).some(input => parseInt(input.value) > 0);
+      checkoutButton.disabled = !hasSelected;
+    } 
+
+
+    function goToStep1() {
+      step2.classList.remove('active');
+      step1.classList.add('active');
+    }
+
+    function goToStep2Back() {
+      step3.classList.remove('active');
+      step2.classList.add('active');
+    }
+
+
+    document.getElementById('form-user').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
+
+      if (!form.checkValidity()) {
+        e.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+
+      goToStep3();
+    });
+
+    function goToStep3() {
+      const firstName = document.getElementById('first-name').value.trim();
+      const lastName = document.getElementById('last-name').value.trim();
+      const name = firstName + " " + lastName;
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      document.getElementById('checkout-name').textContent = name;
+      document.getElementById('checkout-phone').textContent = "Phone  : " + phone;
+      document.getElementById('checkout-address').textContent = address;
+
+      const container = document.getElementById('checkout-products');
+      container.innerHTML = '';
+      let subtotal = 0;
+
+      selectedProducts.forEach(prod => {
+        const line = document.createElement('div');
+        line.className = "d-flex justify-content-between mb-2";
+        line.innerHTML = `<div><strong>${prod.name}</strong><br><small>${prod.qty} item</small></div><div>Rp ${(prod.price * prod.qty).toLocaleString("id-ID")}</div>`;
+        container.appendChild(line);
+        subtotal += prod.price * prod.qty;
+      });
+
+      let discount = subtotal >= 1000000 ? subtotal * 0.15 : subtotal * 0.08;
+      const total = subtotal - discount;
+
+      document.getElementById('subtotal-text').textContent = 'Rp ' + subtotal.toLocaleString("id-ID");
+      document.getElementById('discount-text').textContent = 'Rp ' + discount.toLocaleString("id-ID");
+      document.getElementById('total-text').textContent = 'Rp ' + total.toLocaleString("id-ID");
+
+      step2.classList.remove('active');
+      step3.classList.add('active');
+    }
+
+    document.querySelector('.btn.btn-checkout.w-100.mt-4').addEventListener('click', () => {
+      alert('Pesanan berhasil dibuat! Terima kasih telah berbelanja.');
+    });
+  </script>
+</body>
+
+</html>
