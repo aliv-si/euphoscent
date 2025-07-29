@@ -10,6 +10,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="img/favicon.png">
   <style>
+    *::-webkit-scrollbar {
+      width: 0;
+    }
+
+    *::-webkit-scrollbar-track {
+      overflow: scroll;
+      background: transparent;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      flex: 1;
+    }
+
+    main {
+      flex: 1;
+    }
+
     .nav-hover {
       border-radius: 50px;
       transition: background-color 0.3s ease;
@@ -19,21 +44,16 @@
       background-color: rgba(163, 161, 153, 0.15);
     }
 
-    .shopee-header {
-      background-color: BLUE;
-      padding: 1rem;
-      color: rgb(255, 255, 255);
-    }
-
     .btn-next,
     .btn-checkout {
-      background-color: blue;
-      color: rgb(255, 255, 255);
+      background-color: #3772ff;
+      color: white;
     }
 
     .btn-next:hover,
     .btn-checkout:hover {
-      background-color: BLUE;
+      color: white;
+      background-color: #1255f3;
     }
 
     .section {
@@ -45,18 +65,13 @@
     }
 
     .btn-back {
-      background-color: #dc3545;
-      color: white;
+      border: 1px solid #ff3737;
+      color: #ff3737;
     }
 
     .btn-back:hover {
-      background-color: #c82333;
-    }
-    .Galery {
-      display: flex;
-      justify-content: center; 
-      align-items: center;      
-      margin: 20px 0;           
+      color: white;
+      background-color: #ff5252;
     }
 
     .product-card.muted {
@@ -93,284 +108,315 @@
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="tentang.html">About</a></li>
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="produk.html">Product</a></li>
               <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link active fw-bold" href="pemesanan.html">Shop</a></li>
-              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="construction.html">Contact</a></li>
+              <li class="nav-item nav-hover px-3 mx-1 fs-6"><a class="nav-link" href="kontak.html">Contact</a></li>
           </ul>
           </div>
       </div>
   </nav>
 
-  <div class="section active" id="step1">
-    <h1 class="mb-5 fw-bold pt-5 text-center">Order Product</h1>
-    <div class="container-sm card mb-3 rounded-4 shadow-sm">
-  
-      <!-- Product 1 -->
-      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
-        <div class="row align-items-center" id="product-row">
-          <!-- Gambar Produk -->
-          <div class="col-auto">
-            <img src="img/Product1.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+  <main>
+    <div class="section active p-3" id="step1">
+      <h1 class="mb-5 fw-bold pt-5 text-center">Order Product</h1>
+      <div class="container-sm card mb-3 rounded-4 shadow-sm">
+    
+        <!-- Product 1 -->
+        <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+          <div class="row align-items-center" id="product-row">
+            <!-- Gambar Produk -->
+            <div class="col-auto" style="max-width: 278px;">
+              <img src="img/Product1.png" alt="Jouisse" class="img-fluid">
+            </div>
+    
+            <!-- Info Produk -->
+            <div class="col">
+              <h3 class="mb-2 fw-semibold fs-4">Jouisse</h3>
+              <p class="fs-5 mb-2 text-muted">Fruity | 50ml</p>  
+            </div>
+            
+            <div class="col-md-3 text-md-end text-start">
+              <p class="fw-bold mb-2 fs-4">Rp 189.000</p>
+              <div class="d-grid gap-2 justify-content-md-end my-4">
+                
+                <!-- Tombol Kuantitas -->
+                <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; max-width: 132px;">
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-  
-          <!-- Info Produk -->
-          <div class="col">
-            <h3 class="mb-2 fw-semibold fs-4">Jouisse</h3>
-            <p class="fs-5 mb-2 text-muted">Fruity | 50ml</p>  
+        </div>
+    
+        <!-- Product 2 -->
+        <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+          <div class="row align-items-center" id="product-row">
+            <!-- Gambar Produk -->
+            <div class="col-auto" style="max-width: 278px;">
+              <img src="img/Product2.png" alt="Jouisse" class="img-fluid">
+            </div>
+    
+            <!-- Info Produk -->
+            <div class="col">
+              <h3 class="mb-2 fw-semibold fs-4">Savoreux</h3>
+              <p class="fs-5 mb-2 text-muted">Woody Gourmand | 100ml</p>  
+            </div>
+            
+            <div class="col-md-3 text-md-end text-start">
+              <p class="fw-bold mb-2 fs-4">Rp 329.000</p>
+              <div class="d-grid gap-2 justify-content-md-end my-4">
+                
+                <!-- Tombol Kuantitas -->
+                <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; max-width: 132px;">
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 189.000</p>
-            <div class="d-grid gap-2 justify-content-md-end my-4">
-              
-              <!-- Tombol Kuantitas -->
-              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto;">
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+        </div>
+    
+        <!-- Product 3 -->
+        <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+          <div class="row align-items-center" id="product-row">
+            <!-- Gambar Produk -->
+            <div class="col-auto" style="max-width: 278px;">
+              <img src="img/Product3.png" alt="Jouisse" class="img-fluid">
+            </div>
+    
+            <!-- Info Produk -->
+            <div class="col">
+              <h3 class="mb-2 fw-semibold fs-4">Eau Vide</h3>
+              <p class="fs-5 mb-2 text-muted">Clean Musk | 50ml</p>  
+            </div>
+            
+            <div class="col-md-3 text-md-end text-start">
+              <p class="fw-bold mb-2 fs-4">Rp 159.000</p>
+              <div class="d-grid gap-2 justify-content-md-end my-4">
+                
+                <!-- Tombol Kuantitas -->
+                <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; max-width: 132px;">
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Product 4 -->
+        <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+          <div class="row align-items-center" id="product-row">
+            <!-- Gambar Produk -->
+            <div class="col-auto" style="max-width: 278px;">
+              <img src="img/Product4.png" alt="Jouisse" class="img-fluid">
+            </div>
+    
+            <!-- Info Produk -->
+            <div class="col">
+              <h3 class="mb-2 fw-semibold fs-4">Azurin</h3>
+              <p class="fs-5 mb-2 text-muted">Aquatic | 100ml</p>  
+            </div>
+            
+            <div class="col-md-3 text-md-end text-start">
+              <p class="fw-bold mb-2 fs-4">Rp 279.000</p>
+              <div class="d-grid gap-2 justify-content-md-end my-4">
+                
+                <!-- Tombol Kuantitas -->
+                <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; max-width: 132px;">
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Product 5 -->
+        <div class="card-body product-card border-bottom" style="pointer-events: auto;">
+          <div class="row align-items-center" id="product-row">
+            <!-- Gambar Produk -->
+            <div class="col-auto" style="max-width: 278px;">
+              <img src="img/Product5.png" alt="Jouisse" class="img-fluid object-fit-cover">
+            </div>
+    
+            <!-- Info Produk -->
+            <div class="col">
+              <h3 class="mb-2 fw-semibold fs-4">Lilane</h3>
+              <p class="fs-5 mb-2 text-muted">Floral | 75ml</p>  
+            </div>
+            
+            <div class="col-md-3 text-md-end text-start">
+              <p class="fw-bold mb-2 fs-4">Rp 249.000</p>
+              <div class="d-grid gap-2 justify-content-md-end my-4">
+                
+                <!-- Tombol Kuantitas -->
+                <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; max-width: 132px;">
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
+                  <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-  
-      <!-- Product 2 -->
-      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
-        <div class="row align-items-center" id="product-row">
-          <!-- Gambar Produk -->
-          <div class="col-auto">
-            <img src="img/Product2.png" alt="Jouisse" width="200" height="200" class="img-fluid">
-          </div>
-  
-          <!-- Info Produk -->
-          <div class="col">
-            <h3 class="mb-2 fw-semibold fs-4">Savoreux</h3>
-            <p class="fs-5 mb-2 text-muted">Woody Gourmand | 100ml</p>  
-          </div>
-          
-          <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 329.000</p>
-            <div class="d-grid gap-2 justify-content-md-end my-4">
-              
-              <!-- Tombol Kuantitas -->
-              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+    
+      <div class="container-md text-end my-5">
+        <button id="btn-checkout" class="btn btn-dark btn-lg px-4 py-2 rounded-pill shadow" onclick="goToStep2()" disabled>
+          Checkout
+        </button>
       </div>
+    </div>
   
-      <!-- Product 3 -->
-      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
-        <div class="row align-items-center" id="product-row">
-          <!-- Gambar Produk -->
-          <div class="col-auto">
-            <img src="img/Product3.png" alt="Jouisse" width="200" height="200" class="img-fluid">
+    <div class="section" id="step2">
+      <div class="container py-5">
+        <div class="card p-4 rounded-4">
+          <div class="mb-4 py-3 border-bottom">
+            <h3 class="step-title">Personal Information</h3>
           </div>
-  
-          <!-- Info Produk -->
-          <div class="col">
-            <h3 class="mb-2 fw-semibold fs-4">Eau Vide</h3>
-            <p class="fs-5 mb-2 text-muted">Clean Musk | 50ml</p>  
-          </div>
-          
-          <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 159.000</p>
-            <div class="d-grid gap-2 justify-content-md-end my-4">
-              
-              <!-- Tombol Kuantitas -->
-              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+          <form class="needs-validation" id="form-user" novalidate>
+            <div class="mb-3">
+              <label for="fullname" class="form-label">Full Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-user "></i></span>
+                <input type="text" aria-label="First name" class="form-control py-2" placeholder="First Name" id="first-name" required/>
+                <input type="text" aria-label="Last name" class="form-control py-2" placeholder="Last Name" id="last-name" required/>
+                <div class="invalid-feedback">Please enter your full name.</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Product 4 -->
-      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
-        <div class="row align-items-center" id="product-row">
-          <!-- Gambar Produk -->
-          <div class="col-auto">
-            <img src="img/Product4.png" alt="Jouisse" width="200" height="200" class="img-fluid">
-          </div>
-  
-          <!-- Info Produk -->
-          <div class="col">
-            <h3 class="mb-2 fw-semibold fs-4">Azurin</h3>
-            <p class="fs-5 mb-2 text-muted">Aquatic | 100ml</p>  
-          </div>
-          
-          <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 279.000</p>
-            <div class="d-grid gap-2 justify-content-md-end my-4">
-              
-              <!-- Tombol Kuantitas -->
-              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                <input type="tel" class="form-control py-2" id="phone" placeholder="Enter your phone number" id="phone" required>
+                <div class="invalid-feedback">Phone number can't be empty.</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Product 5 -->
-      <div class="card-body product-card border-bottom" style="pointer-events: auto;">
-        <div class="row align-items-center" id="product-row">
-          <!-- Gambar Produk -->
-          <div class="col-auto">
-            <img src="img/Product5.png" alt="Jouisse" width="200" height="200" class="img-fluid">
-          </div>
-  
-          <!-- Info Produk -->
-          <div class="col">
-            <h3 class="mb-2 fw-semibold fs-4">Lilane</h3>
-            <p class="fs-5 mb-2 text-muted">Floral | 75ml</p>  
-          </div>
-          
-          <div class="col-md-3 text-md-end text-start">
-            <p class="fw-bold mb-2 fs-4">Rp 249.000</p>
-            <div class="d-grid gap-2 justify-content-md-end my-4">
-              
-              <!-- Tombol Kuantitas -->
-              <div class="d-inline-flex align-items-center border rounded-pill overflow-hidden shadow-sm p-1" style="width: auto; pointer-events: auto;">
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="decreaseQty(this)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border-0 bg-transparent px-2 quantity" value="0" style="width: 30px;" readonly>
-                <button class="btn btn-outline-secondary rounded-5 px-3 border-0" onclick="increaseQty(this)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" class="form-control py-2" id="email" placeholder="Enter your email" id="email" required>
+                <div class="invalid-feedback">Your email address is required.</div>
               </div>
             </div>
-          </div>
+            <div class="mb-3">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea class="form-control py-2" id="address" rows="3" placeholder="Enter your address" id="address" required></textarea>
+              <div class="invalid-feedback">We need your address to continue.</div>
+            </div>
+            <div class="text-end mt-4">
+              <button type="button" class="btn btn-back btn-lg px-4 py-2 rounded-pill" onclick="goToStep1()">Back</button>
+              <button type="submit" class="btn btn-checkout btn-lg px-3 py-2 rounded-pill shadow">Select Payment</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   
-    <div class="container-md text-end my-5">
-      <button id="btn-checkout" class="btn btn-dark btn-lg px-4 py-2 rounded-pill shadow" onclick="goToStep2()" disabled>
-        Checkout
-      </button>
-    </div>
-  </div>
-
-  <div class="section" id="step2">
-    <div class="container py-5">
-      <div class="card p-4 rounded-4">
-        <div class="mb-4 pb-3 border-bottom">
-          <h5 class="step-title">Personal Information</h5>
-        </div>
-        <form>
-          <div class="mb-3">
-            <label for="fullname" class="form-label">Full Name</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-user "></i></span>
-              <input type="text" aria-label="First name" class="form-control" placeholder="First Name" id="first-name" required/>
-              <input type="text" aria-label="Last name" class="form-control" placeholder="Last Name" id="last-name" required/>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" id="phone" required>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" id="email" required>
-            </div>
-          </div>
-          <div class="mb-3">
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" id="address" required></textarea>
-          </div>
-          <div class="text-end mt-4">
-            <button type="button" class="btn btn-secondary px-4 rounded-5" onclick="goToStep1()">Back</button>
-            <button type="submit" class="btn btn-primary px-4 rounded-5" onclick="goToStep3()">Select Payment</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-    <!--Checkout -->
     <div class="section" id="step3">
-      <div class="row g-4">
-        <!-- Alamat dan Produk -->
-        <div class="col-md-8">
-          <div class="card p-3 shadow-sm mb-3">
-            <h5>Alamat Pengiriman</h5>
-            <p class="fw-semibold" id="checkout-name"></p>
-            <p id="checkout-address"></p>
-            <p class="text-muted" id="checkout-phone"></p>
+      <div class="container my-4">
+        <div class="row g-4">
+          <div class="col-md-8">
+            <!-- Alamat Pengiriman -->
+            <div class="card mb-3 rounded-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title border-bottom py-3">Shipping Address</h5>
+                <p class="fw-semibold" id="checkout-name"></p>
+                <p id="checkout-address"></p>
+                <p class="text-muted" id="checkout-phone"></p>
+              </div>
+            </div>
+  
+            <!-- Produk Dipesan -->
+            <div class="card rounded-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title border-bottom py-3">Ordered Products</h5>
+                <div id="checkout-products"></div>
+              </div>
+            </div>
           </div>
-          <div class="card p-3 shadow-sm">
-            <h5 class="mb-3">Produk Dipesan</h5>
-            <div id="checkout-products"></div>
-          </div>
-        </div>
-
-        <!--Pembayaran -->
-        <div class="col-md-4">
-          <div class="card p-3 shadow-sm">
-            <h5>Ringkasan Pembayaran</h5>
-            <div class="d-flex justify-content-between mb-2">
-              <span>Subtotal</span>
-              <span id="subtotal-text">Rp 0</span>
+  
+          <!-- Ringkasan Pembayaran -->
+          <div class="col-md-4">
+            <div class="card rounded-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Payment Summary</h5>
+  
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Subtotal</span>
+                  <span id="subtotal-text">Rp 0</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Discount</span>
+                  <span id="discount-text">Rp 0</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Ongkir</span>
+                  <span>Rp 0</span>
+                </div>
+  
+                <hr>
+  
+                <div class="d-flex justify-content-between fw-bold mb-5">
+                  <span>Total</span>
+                  <span id="total-text">Rp 0</span>
+                </div>
+  
+                <button type="button" class="btn btn-back w-100 mb-2 btn-lg px-4 py-2 rounded-pill" onclick="goToStep2Back()">Back</button>
+                <button type="button" class="btn btn-checkout w-100 btn-lg px-4 py-2 rounded-pill shadow" data-bs-toggle="modal" data-bs-target="#orderSuccessModal" onclick="showSuccessModalAndReset()">Checkout</button>
+              </div>
             </div>
-            <div class="d-flex justify-content-between mb-2">
-              <div>Diskon</div>
-              <div id="discount-text">Rp</div>
-            </div>
-            <div class="d-flex justify-content-between mb-2">
-              <span>Ongkir</span>
-              <span>Rp 0</span>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between fw-bold">
-              <span>Total</span>
-              <span id="total-text">Rp 0</span>
-            </div>
-            <button type="button" class="btn btn-back w-100 mb-2" onclick="goToStep2Back()">Kembali</button>
-            <button class="btn btn-checkout w-100 mt-4">Buat Pesanan</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+  <!-- Popup Page / Modal -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4 rounded-4 border-0" style="background-color: #fff;">
+          <div class="modal-body">
+            <div class="mb-3">
+              <i class="fa-solid fa-circle-check fa-3x text-success"></i>
+            </div>
+            <h5 class="fw-bold mb-2" id="orderSuccessLabel">Order Placed Successfully</h5>
+            <p class="text-muted mb-0">Thank you for your purchase! Your order has been received and is being processed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- Footer -->
   <footer class="text-white" style="background: linear-gradient(rgba(0, 0, 0, 1), rgba(54, 47, 28, 1)); cursor: default;">
-  <!-- Section: Social media -->
-  
-      <!-- Section: Links  -->
+  <!-- Social media -->
       <section class="p-3">
           <div class="container text-center text-md-start mt-5">
               <div class="row mt-3">
@@ -401,14 +447,11 @@
                   </div>
   
                   
-                  <!-- Right -->
+                  <!-- Add -->
                   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                       <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                       <p><i class="fas fa-home me-3"></i>Condongcatur, Kabupaten Sleman, Daerah Istimewa Yogyakarta</p>
-                      <p>
-                          <i class="fas fa-envelope me-3"></i>
-                          euphoscènt@gmail.com
-                      </p>
+                      <p><i class="fas fa-envelope me-3"></i>euphoscènt@gmail.com</p>
                       <p><i class="fas fa-phone me-3"></i>+62 274884 201</p>   
                   </div>
               </div>
@@ -494,7 +537,6 @@
       checkoutButton.disabled = !hasSelected;
     } 
 
-
     function goToStep1() {
       step2.classList.remove('active');
       step1.classList.add('active');
@@ -504,7 +546,6 @@
       step3.classList.remove('active');
       step2.classList.add('active');
     }
-
 
     document.getElementById('form-user').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -556,6 +597,44 @@
     document.querySelector('.btn.btn-checkout.w-100.mt-4').addEventListener('click', () => {
       alert('Pesanan berhasil dibuat! Terima kasih telah berbelanja.');
     });
+
+    function showSuccessModalAndReset() {
+      const modalEl = document.getElementById('orderSuccessModal');
+      const modal = new bootstrap.Modal(modalEl);
+
+      modal.show();
+
+      modalEl.addEventListener('hidden.bs.modal', function handleClose() {
+        modalEl.removeEventListener('hidden.bs.modal', handleClose);
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) backdrop.remove();
+
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = 'auto';
+
+        step3.classList.remove('active');
+        step1.classList.add('active');
+
+        document.querySelectorAll('.quantity').forEach(input => input.value = 0);
+        document.querySelectorAll('.product-card').forEach(card => card.classList.add('muted'));
+        updateCheckoutButtonState();
+
+        const form = document.querySelector('form');
+        if (form) {
+          form.reset();
+
+          form.classList.remove('was-validated');
+          form.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
+            el.classList.remove('is-valid', 'is-invalid');
+          });
+        }
+      });
+
+      setTimeout(() => {
+        modal.hide();
+      }, 5000);
+    }
   </script>
 </body>
 
